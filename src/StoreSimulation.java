@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -16,9 +15,8 @@ public class StoreSimulation {
      * @throws InterruptedException если выполнение потока прерывается во время ожидания завершения касс
      */
     public static void main(String[] args) throws InterruptedException {
-        // Потокобезопасные коллекции
-        List<Customer> queue = Collections.synchronizedList(new ArrayList<>());
-        List<Long> waitTimes = Collections.synchronizedList(new ArrayList<>());
+        List<Customer> queue = new ArrayList<>();
+        List<Long> waitTimes = new ArrayList<>();
         Random random = new Random();
 
         // Генерация покупателей
